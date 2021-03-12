@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.sibelyildiz.cryptocurrencyapp.R
@@ -45,7 +46,11 @@ class LoginFragment : Fragment() {
             )
                     .addOnCompleteListener { p0 ->
                         if (p0.isSuccessful) {
-                            findNavController().navigate(R.id.homeFragment)
+                            findNavController().navigate(
+                                R.id.homeFragment, null,
+                                NavOptions.Builder()
+                                    .setPopUpTo(R.id.loginRegisterMainFragment, true).build()
+                            )
                         } else {
                             "Hatalı Giriş: " + p0.exception?.message!!.toastMessage(requireContext())
 
