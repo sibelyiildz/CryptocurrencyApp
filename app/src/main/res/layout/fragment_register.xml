@@ -21,7 +21,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/font60"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/icn_app" />
 
         <EditText
             android:id="@+id/edt_email"
@@ -45,6 +45,7 @@
             android:layout_marginStart="@dimen/margin32"
             android:layout_marginEnd="@dimen/margin32"
             android:layout_marginBottom="@dimen/margin40"
+            android:inputType="textPassword"
             android:background="@drawable/rounded_background_edittext"
             android:hint="@string/password"
             android:padding="@dimen/margin16"

@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="button_background_color">#3b4ca7</color>
     <color name="color_grey">#8C8C8C</color>
+    <color name="color_text">#bfcadd</color>
+    <color name="color_blue">#192a56</color>
+    <color name="spring_green">#02EA6F</color>
 </resources>

@@ -16,11 +16,13 @@ import com.sibelyildiz.cryptocurrencyapp.util.toastMessage
 class RegisterFragment : Fragment() {
 
     private lateinit var binding: FragmentRegisterBinding
-    private lateinit var auth: FirebaseAuth
+    private val auth: FirebaseAuth by lazy {
+        FirebaseAuth.getInstance()
+    }
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         binding = FragmentRegisterBinding.inflate(inflater)
         return binding.root
@@ -40,7 +42,7 @@ class RegisterFragment : Fragment() {
             userRegister(binding.edtEmail.text.toString(), binding.edtPassword.text.toString())
         } else {
             //context paslamak doğru mu
-            "Boş alanları doldurunuz!".toastMessage(requireContext())
+            "Boş alanları doldurunuz!".toastMessage(requireActivity())
         }
     }
 
@@ -48,11 +50,15 @@ class RegisterFragment : Fragment() {
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { p0 ->
                     if (p0.isSuccessful) {
-                        "Üye kaydedildi:" + FirebaseAuth.getInstance().currentUser?.email!!.toastMessage(requireContext())
+                        "Üye kaydedildi:" + FirebaseAuth.getInstance().currentUser?.email!!.toastMessage(
+                            requireActivity()
+                        )
                         sendEmail()
                         FirebaseAuth.getInstance().signOut()
                     } else {
-                        "Üye kaydedilirken sorun oluştu:" + p0.exception?.message!!.toastMessage(requireContext())
+                        "Üye kaydedilirken sorun oluştu:" + p0.exception?.message!!.toastMessage(
+                            requireActivity()
+                        )
                     }
                 }
     }
@@ -63,11 +69,13 @@ class RegisterFragment : Fragment() {
         user?.sendEmailVerification()?.addOnCompleteListener(object : OnCompleteListener<Void> {
             override fun onComplete(p0: Task<Void>) {
                 if (p0.isSuccessful) {
-                    "Mailinizi kontrol edin, mailinizi onaylayın".toastMessage(requireContext())
+                    "Mailinizi kontrol edin, mailinizi onaylayın".toastMessage(requireActivity())
                     findNavController().popBackStack()
                     findNavController().navigate(R.id.loginFragment)
                 } else {
-                    "Mail gönderilirken sorun oluştu " + p0.exception?.message!!.toastMessage(requireContext())
+                    "Mail gönderilirken sorun oluştu " + p0.exception?.message!!.toastMessage(
+                        requireActivity()
+                    )
                 }
             }
 

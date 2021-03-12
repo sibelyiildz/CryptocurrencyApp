@@ -47,17 +47,17 @@ class LoginFragment : Fragment() {
                     .addOnCompleteListener { p0 ->
                         if (p0.isSuccessful) {
                             findNavController().navigate(
-                                R.id.homeFragment, null,
+                                R.id.mainFragment, null,
                                 NavOptions.Builder()
                                     .setPopUpTo(R.id.loginRegisterMainFragment, true).build()
                             )
                         } else {
-                            "Hatalı Giriş: " + p0.exception?.message!!.toastMessage(requireContext())
+                            "Hatalı Giriş: " + p0.exception?.message!!.toastMessage(requireActivity())
 
                         }
                     }
         } else {
-            "Boş alanları doldurunuz".toastMessage(requireContext())
+            "Boş alanları doldurunuz".toastMessage(requireActivity())
         }
     }
 
@@ -66,9 +66,9 @@ class LoginFragment : Fragment() {
             val user = p0.currentUser
             if (user != null) {
                 if (user.isEmailVerified) {
-                    "Mail onaylandı giriş yapabilirsiniz".toastMessage(requireContext())
+                    "Mail onaylandı giriş yapabilirsiniz".toastMessage(requireActivity())
                 } else {
-                    "Mail adresinizi onaylamadan giriş yapamazsınız".toastMessage(requireContext())
+                    "Mail adresinizi onaylamadan giriş yapamazsınız".toastMessage(requireActivity())
                 }
             }
         }

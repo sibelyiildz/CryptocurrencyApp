@@ -21,7 +21,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/font60"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/icn_app" />
 
         <Button
             android:id="@+id/btn_login"
