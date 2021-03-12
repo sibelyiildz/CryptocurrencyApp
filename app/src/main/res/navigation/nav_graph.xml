@@ -7,11 +7,26 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.sibelyildiz.cryptocurrencyapp.SplashFragment"
+        android:name="com.sibelyildiz.cryptocurrencyapp.ui.splash.SplashFragment"
         android:label="SplashFragment" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.sibelyildiz.cryptocurrencyapp.HomeFragment"
+        android:name="com.sibelyildiz.cryptocurrencyapp.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/loginRegisterMainFragment"
+        android:name="com.sibelyildiz.cryptocurrencyapp.ui.loginRegister.LoginRegisterMainFragment"
+        android:label="fragment_login_register_main"
+        tools:layout="@layout/fragment_login_register_main" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.sibelyildiz.cryptocurrencyapp.ui.loginRegister.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.sibelyildiz.cryptocurrencyapp.ui.loginRegister.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

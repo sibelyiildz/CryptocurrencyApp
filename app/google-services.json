@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "384201240845",
+    "project_id": "cryptocurrencyapp-e2d6b",
+    "storage_bucket": "cryptocurrencyapp-e2d6b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384201240845:android:202678700d44ffada08044",
+        "android_client_info": {
+          "package_name": "com.sibelyildiz.cryptocurrencyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "384201240845-f40c8otkgupul4nerpe1gc22tqcdktu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO1qisHa_uyo5eaI3fY6oATYvpu7wF5Hk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "384201240845-f40c8otkgupul4nerpe1gc22tqcdktu8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

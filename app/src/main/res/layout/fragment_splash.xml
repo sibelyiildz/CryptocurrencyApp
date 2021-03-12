@@ -7,14 +7,14 @@
 
         <variable
             name="FragmentSplash"
-            type="com.sibelyildiz.cryptocurrencyapp.SplashFragment" />
+            type="com.sibelyildiz.cryptocurrencyapp.ui.splash.SplashFragment" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        tools:context=".SplashFragment">
+        tools:context=".ui.splash.SplashFragment">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/splash_animation"

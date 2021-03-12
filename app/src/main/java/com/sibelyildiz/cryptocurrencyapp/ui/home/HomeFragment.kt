@@ -1,10 +1,11 @@
-package com.sibelyildiz.cryptocurrencyapp
+package com.sibelyildiz.cryptocurrencyapp.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.sibelyildiz.cryptocurrencyapp.R
 
 class HomeFragment : Fragment() {
     override fun onCreateView(

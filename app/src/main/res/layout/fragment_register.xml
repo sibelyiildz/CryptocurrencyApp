@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="RegisterFragment"
+            type="com.sibelyildiz.cryptocurrencyapp.ui.loginRegister.RegisterFragment" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        tools:context=".ui.loginRegister.RegisterFragment">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/font60"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/edt_password"
+            android:layout_marginStart="@dimen/margin32"
+            android:layout_marginEnd="@dimen/margin32"
+            android:layout_marginBottom="@dimen/margin30"
+            android:background="@drawable/rounded_background_edittext"
+            android:hint="@string/email"
+            android:padding="@dimen/margin16"
+            android:textColor="@color/white"
+            android:textColorHint="@color/color_grey" />
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_register"
+            android:layout_marginStart="@dimen/margin32"
+            android:layout_marginEnd="@dimen/margin32"
+            android:layout_marginBottom="@dimen/margin40"
+            android:background="@drawable/rounded_background_edittext"
+            android:hint="@string/password"
+            android:padding="@dimen/margin16"
+            android:textColor="@color/white"
+            android:textColorHint="@color/color_grey" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin32"
+            android:layout_marginTop="@dimen/margin40"
+            android:layout_marginEnd="@dimen/margin32"
+            android:layout_marginBottom="@dimen/margin40"
+            android:background="@drawable/rounded_background_blue"
+            android:text="@string/register"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</layout>

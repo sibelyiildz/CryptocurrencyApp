@@ -1,7 +1,8 @@
-package com.sibelyildiz.cryptocurrencyapp
+package com.sibelyildiz.cryptocurrencyapp.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.sibelyildiz.cryptocurrencyapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

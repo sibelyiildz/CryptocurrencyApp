@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">CryptocurrencyApp</string>
     <string name="bitcoin_ticker">Bitcoin Ticker</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Logın</string>
+    <string name="register">Regıster</string>
 </resources>

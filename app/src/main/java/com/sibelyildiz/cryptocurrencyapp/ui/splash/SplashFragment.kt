@@ -1,4 +1,4 @@
-package com.sibelyildiz.cryptocurrencyapp
+package com.sibelyildiz.cryptocurrencyapp.ui.splash
 
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.sibelyildiz.cryptocurrencyapp.R
 import com.sibelyildiz.cryptocurrencyapp.databinding.FragmentSplashBinding
 
 
@@ -31,7 +32,7 @@ class SplashFragment : Fragment() {
         countDownTimer = object : CountDownTimer(3000, 1000) {
             override fun onFinish() {
                 findNavController().popBackStack()
-                findNavController().navigate(R.id.homeFragment)
+                findNavController().navigate(R.id.loginRegisterMainFragment)
             }
 
             override fun onTick(millisUntilFinished: Long) {}
