@@ -65,7 +65,7 @@
         android:label="FavoriteFragment" />
     <fragment
         android:id="@+id/coinDetailFragment"
-        android:name="com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.home.CoinDetailFragment"
+        android:name="com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.home.coinDetail.CoinDetailFragment"
         android:label="fragment_coin_detail"
         tools:layout="@layout/fragment_coin_detail" />
 </navigation>

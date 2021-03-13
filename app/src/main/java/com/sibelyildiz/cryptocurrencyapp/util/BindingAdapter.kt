@@ -9,13 +9,13 @@ import com.bumptech.glide.Glide
 import com.sibelyildiz.cryptocurrencyapp.R
 
 @BindingAdapter("imageUrl")
-fun loadImage(view: ImageView, url: String) {
+fun loadImage(view: ImageView, url: String?) {
     Glide.with(view).load(url).into(view)
 }
 
 @BindingAdapter("tvBackground")
-fun loadBackground(textView: TextView, number: String) {
-    val firstIndex = number.substring(0, 1)
+fun loadBackground(textView: TextView, number: String?) {
+    val firstIndex = number?.substring(0, 1)
     if (firstIndex == "-") {
         DrawableCompat.setTint(
             textView.background,

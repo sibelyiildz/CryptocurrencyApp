@@ -1,14 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.viewPagerPage.home.CoinDetailFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="coinDateilViewState"
+            type="com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.home.coinDetail.CoinDetailItemViewState" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/color_blue"
+        tools:context=".ui.home.viewPagerPage.home.coinDetail.CoinDetailFragment">
 
-</FrameLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_coin"
+            imageUrl="@{coinDateilViewState.imageUrl}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="@dimen/margin30"
+            android:layout_marginTop="@dimen/margin30"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/icn_app" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16"
+            android:layout_marginTop="@dimen/margin8"
+            android:text="@{coinDateilViewState.name}"
+            android:textColor="@color/color_grey"
+            android:textSize="@dimen/font20"
+            app:layout_constraintStart_toEndOf="@id/img_coin"
+            app:layout_constraintTop_toTopOf="@id/img_coin"
+            tools:text="Sibel Yıldız" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin8"
+            android:text="@{coinDateilViewState.symbol}"
+            android:textColor="@color/cream_can"
+            android:textSize="@dimen/font18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_name"
+            app:layout_constraintStart_toEndOf="@+id/txt_name"
+            app:layout_constraintTop_toTopOf="@+id/txt_name"
+            tools:text="ETH" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16"
+            android:layout_marginTop="@dimen/margin20"
+            android:text="@{coinDateilViewState.currentPrice}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font22"
+            app:layout_constraintStart_toEndOf="@+id/img_coin"
+            app:layout_constraintTop_toBottomOf="@+id/txt_name"
+            tools:text="Sibel Yıldız" />
+
+        <TextView
+            tvBackground="@{coinDateilViewState.priceChange}"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin16"
+            android:background="@drawable/rounded_background_blue"
+            android:gravity="center"
+            android:padding="@dimen/margin6"
+            android:text="@{coinDateilViewState.priceChange}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="+0.31%" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin20"
+            android:layout_marginEnd="@dimen/margin8"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/img_coin" />
+
+        <TextView
+            android:id="@+id/txt_hashing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16"
+            android:layout_marginTop="@dimen/margin20"
+            android:text="@string/hashing_algorithm"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin16"
+            android:text="@{coinDateilViewState.hashingAlgorithm}"
+            android:textColor="@color/color_grey"
+            android:textSize="@dimen/font18"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_hashing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txt_hashing"
+            tools:text="SHA-256" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin20"
+            android:layout_marginEnd="@dimen/margin8"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/txt_hashing"
+            tools:layout_editor_absoluteX="8dp" />
+
+        <EditText
+            android:id="@+id/edt_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16"
+            android:layout_marginTop="@dimen/margin20"
+            android:background="@drawable/rounded_edittext_edge"
+            android:drawableStart="@drawable/icn_refresh"
+            android:drawablePadding="@dimen/margin8"
+            android:hint="@string/refresh"
+            android:inputType="number"
+            android:padding="@dimen/margin20"
+            android:textColor="@color/white"
+            android:textColorHint="@color/color_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <Button
+            android:id="@+id/btn_refresh_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin8"
+            android:background="@drawable/rounded_background_blue"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/edt_refresh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edt_refresh" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="@dimen/margin8"
+            android:layout_marginTop="@dimen/margin20"
+            android:layout_marginEnd="@dimen/margin8"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/edt_refresh"
+            tools:layout_editor_absoluteX="8dp" />
+
+        <TextView
+            android:id="@+id/txt_title_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin20"
+            android:layout_marginTop="@dimen/margin20"
+            android:text="@string/description"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title_desc">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin16"
+                android:text="@{coinDateilViewState.description}"
+                android:textColor="@color/color_grey"
+                tools:text="Descripton" />
+
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

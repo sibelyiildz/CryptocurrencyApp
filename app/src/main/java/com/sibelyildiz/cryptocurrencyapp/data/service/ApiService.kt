@@ -1,7 +1,9 @@
 package com.sibelyildiz.cryptocurrencyapp.data.service
 
+import com.sibelyildiz.cryptocurrencyapp.data.model.CoinDetailResponse
 import com.sibelyildiz.cryptocurrencyapp.data.model.CoinListResponse
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -14,4 +16,14 @@ interface ApiService {
         @Query("page") page: Int = 1,
         @Query("sparkline") sparkline: Boolean = false
     ): List<CoinListResponse>
+
+    @GET("coins/{id}")
+    suspend fun getCoinDetail(
+        @Path("id") id: String,
+        @Query("localization") localization: Boolean = false,
+        @Query("tickers") tickers: Boolean = false,
+        @Query("market_data") market_data: Boolean = true,
+        @Query("community_data") community_data: Boolean = false,
+        @Query("developer_data") developer_data: Boolean = false,
+    ): CoinDetailResponse
 }
