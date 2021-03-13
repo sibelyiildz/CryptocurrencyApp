@@ -76,9 +76,11 @@ class HomeFragment : Fragment() {
     private val getCoinListObserver = Observer<Resource<List<CoinListResponse>>> { state ->
         when (state.status) {
             Status.LOADING -> {
+                binding.homeProgress.visibility = View.VISIBLE
                 Log.e("TEST", "LOADING ${state.data}")
             }
             Status.SUCCESS -> {
+                binding.homeProgress.visibility = View.GONE
                 state.data?.let {
                     Log.e("TEST", "SUCCESS ${state.data}")
                     adapter.coins.clear()
@@ -87,6 +89,7 @@ class HomeFragment : Fragment() {
                 }
             }
             Status.ERROR -> {
+                binding.homeProgress.visibility = View.GONE
                 Log.e("TEST", "ERROR ${state.message}")
             }
         }

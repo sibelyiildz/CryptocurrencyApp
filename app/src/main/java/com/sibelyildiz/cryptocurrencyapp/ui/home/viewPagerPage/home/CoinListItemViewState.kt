@@ -8,7 +8,7 @@ data class CoinListItemViewState(val coins: CoinListResponse) {
 
     fun getImageUrl() = coins.image
 
-    fun getCurrentPrice() = coins.current_price.toString()
+    fun getCurrentPrice() = coins.current_price.toString() + " TRY"
 
     fun getPriceChange(): String {
         val nf: NumberFormat = NumberFormat.getInstance()

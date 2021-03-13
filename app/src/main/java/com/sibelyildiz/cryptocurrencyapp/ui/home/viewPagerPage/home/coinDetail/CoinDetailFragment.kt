@@ -64,16 +64,19 @@ class CoinDetailFragment : Fragment() {
     private val getCoinDetailObserver = Observer<Resource<CoinDetailResponse>> { state ->
         when (state.status) {
             Status.LOADING -> {
+                binding.coinDetailProgress.visibility = View.VISIBLE
                 Log.e("TEST", "LOADING ${state.data}")
             }
             Status.SUCCESS -> {
                 state.data?.let {
+                    binding.coinDetailProgress.visibility = View.GONE
                     Log.e("TEST", "SUCCESS ${state.data}")
                     binding.coinDateilViewState = CoinDetailItemViewState(it)
 
                 }
             }
             Status.ERROR -> {
+                binding.coinDetailProgress.visibility = View.GONE
                 Log.e("TEST", "ERROR ${state.message}")
             }
         }

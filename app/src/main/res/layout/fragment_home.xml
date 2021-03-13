@@ -5,35 +5,49 @@
 
     <data></data>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
-        tools:context=".ui.home.viewPagerPage.home.HomeFragment">
+        android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/edt_sarch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin20"
-            android:layout_marginBottom="@dimen/margin30"
-            android:background="@drawable/rounded_background_edittext"
-            android:drawableStart="@drawable/icn_search"
-            android:drawablePadding="@dimen/margin10"
-            android:hint="@string/search"
-            android:padding="@dimen/margin16"
-            android:textColor="@color/white"
-            android:textColorHint="@color/color_grey" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_coins"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/margin15"
-            android:layout_marginEnd="@dimen/margin15"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/row_coin" />
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            tools:context=".ui.home.viewPagerPage.home.HomeFragment">
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/edt_sarch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin20"
+                android:layout_marginBottom="@dimen/margin30"
+                android:background="@drawable/rounded_background_edittext"
+                android:drawableStart="@drawable/icn_search"
+                android:drawablePadding="@dimen/margin10"
+                android:hint="@string/search"
+                android:padding="@dimen/margin16"
+                android:textColor="@color/white"
+                android:textColorHint="@color/color_grey" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_coins"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin15"
+                android:layout_marginEnd="@dimen/margin15"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/row_coin" />
+
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:id="@+id/home_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+    </FrameLayout>
 </layout>

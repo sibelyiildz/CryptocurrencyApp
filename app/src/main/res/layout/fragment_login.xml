@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        tools:context=".ui.loginRegister.LoginFragment">
+        tools:context=".ui.loginRegister.login.LoginFragment">
 
         <ImageView
             android:layout_width="wrap_content"
