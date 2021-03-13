@@ -3,10 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <variable
-            name="RegisterFragment"
-            type="com.sibelyildiz.cryptocurrencyapp.ui.loginRegister.RegisterFragment" />
     </data>
 
     <RelativeLayout

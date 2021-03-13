@@ -4,10 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <variable
-            name="MainFragment"
-            type="com.sibelyildiz.cryptocurrencyapp.ui.home.MainFragment" />
     </data>
 
     <LinearLayout
@@ -20,12 +16,13 @@
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:tabIndicatorColor="@color/colorPrimary"
-            app:tabIndicatorHeight="2dp"
+            android:background="@color/colorPrimary"
+            app:tabIndicatorColor="@color/white"
             app:tabMode="fixed"
-            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabIndicatorHeight="1dp"
+            app:tabSelectedTextColor="@color/white"
             app:tabTextAppearance="@style/CustomTabLayoutWidget"
-            app:tabTextColor="@color/black" />
+            app:tabTextColor="@color/color_grey" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"

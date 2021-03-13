@@ -14,7 +14,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
 
-    lateinit var binding: FragmentMainBinding
+    private var _binding: FragmentMainBinding? = null
+    private val binding get() = _binding!!
     private val viewModel by viewModel<MainViewModel>()
     lateinit var viewPagerAdapter: ViewPagerAdapter
 
@@ -22,7 +23,7 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMainBinding.inflate(inflater)
+        _binding = FragmentMainBinding.inflate(inflater)
         return binding.root
     }
 
@@ -51,6 +52,11 @@ class MainFragment : Fragment() {
             tab.text = fragmentTitleList[position]
         }.attach()
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 }

@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import com.sibelyildiz.cryptocurrencyapp.R
 import com.sibelyildiz.cryptocurrencyapp.data.model.CoinListResponse
 import com.sibelyildiz.cryptocurrencyapp.databinding.FragmentHomeBinding
 import com.sibelyildiz.cryptocurrencyapp.util.Resource
@@ -15,16 +17,18 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : Fragment() {
 
-    private var binding: FragmentHomeBinding? = null
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
     private val viewModel by viewModel<HomeViewModel>()
+    private lateinit var adapter: CoinRecylerAdapter
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater)
-        return binding!!.root
+        _binding = FragmentHomeBinding.inflate(inflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,11 +38,19 @@ class HomeFragment : Fragment() {
 
     private fun initialize() {
         setObservers()
+        loadRecycler()
     }
 
     private fun setObservers() {
-
         viewModel.getCoinList().observe(viewLifecycleOwner, getCoinListObserver)
+    }
+
+    private fun loadRecycler() {
+        adapter = CoinRecylerAdapter()
+        binding.recyclerViewCoins.adapter = adapter
+        adapter.onClickItem {
+            findNavController().navigate(R.id.coinDetailFragment)
+        }
     }
 
     private val getCoinListObserver = Observer<Resource<List<CoinListResponse>>> { state ->
@@ -47,7 +59,11 @@ class HomeFragment : Fragment() {
                 Log.e("TEST", "LOADING ${state.data}")
             }
             Status.SUCCESS -> {
-                Log.e("TEST", "SUCCESS ${state.data}")
+                state.data?.let {
+                    Log.e("TEST", "SUCCESS ${state.data}")
+                    adapter.coins.addAll(it)
+                    adapter.notifyDataSetChanged()
+                }
             }
             Status.ERROR -> {
                 Log.e("TEST", "ERROR ${state.message}")
@@ -57,6 +73,6 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding = null
+        _binding = null
     }
 }

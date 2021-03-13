@@ -14,15 +14,16 @@ import com.sibelyildiz.cryptocurrencyapp.util.toastMessage
 
 class LoginFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginBinding
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
     private lateinit var mAuthStateListener: FirebaseAuth.AuthStateListener
     private lateinit var mAuth: FirebaseAuth
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLoginBinding.inflate(inflater)
+        _binding = FragmentLoginBinding.inflate(inflater)
         return binding.root
     }
 
@@ -74,4 +75,8 @@ class LoginFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

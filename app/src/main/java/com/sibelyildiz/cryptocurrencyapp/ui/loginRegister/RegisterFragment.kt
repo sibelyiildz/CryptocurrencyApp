@@ -15,7 +15,8 @@ import com.sibelyildiz.cryptocurrencyapp.util.toastMessage
 
 class RegisterFragment : Fragment() {
 
-    private lateinit var binding: FragmentRegisterBinding
+    private var _binding: FragmentRegisterBinding? = null
+    private val binding get() = _binding!!
     private val auth: FirebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
@@ -24,7 +25,7 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentRegisterBinding.inflate(inflater)
+        _binding = FragmentRegisterBinding.inflate(inflater)
         return binding.root
     }
 
@@ -80,6 +81,11 @@ class RegisterFragment : Fragment() {
             }
 
         })
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 

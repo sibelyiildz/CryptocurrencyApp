@@ -11,13 +11,14 @@ import com.sibelyildiz.cryptocurrencyapp.databinding.FragmentLoginRegisterMainBi
 
 class LoginRegisterMainFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginRegisterMainBinding
+    private var _binding: FragmentLoginRegisterMainBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLoginRegisterMainBinding.inflate(inflater)
+        _binding = FragmentLoginRegisterMainBinding.inflate(inflater)
         return binding.root
     }
 
@@ -38,6 +39,11 @@ class LoginRegisterMainFragment : Fragment() {
 
     private val registerButtonSetClickListener = View.OnClickListener {
         findNavController().navigate(R.id.registerFragment)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

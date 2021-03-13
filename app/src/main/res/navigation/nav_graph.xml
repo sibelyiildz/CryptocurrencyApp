@@ -8,7 +8,14 @@
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.sibelyildiz.cryptocurrencyapp.ui.splash.SplashFragment"
-        android:label="SplashFragment" />
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_loginRegisterMainFragment"
+            app:destination="@id/loginRegisterMainFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.sibelyildiz.cryptocurrencyapp.ui.home.MainFragment"
@@ -18,15 +25,47 @@
         android:id="@+id/loginRegisterMainFragment"
         android:name="com.sibelyildiz.cryptocurrencyapp.ui.loginRegister.LoginRegisterMainFragment"
         android:label="fragment_login_register_main"
-        tools:layout="@layout/fragment_login_register_main" />
+        tools:layout="@layout/fragment_login_register_main">
+        <action
+            android:id="@+id/action_loginRegisterMainFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginRegisterMainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.sibelyildiz.cryptocurrencyapp.ui.loginRegister.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.sibelyildiz.cryptocurrencyapp.ui.loginRegister.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_coinDetailFragment"
+            app:destination="@id/coinDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.favorite.FavoriteFragment"
+        android:label="FavoriteFragment" />
+    <fragment
+        android:id="@+id/coinDetailFragment"
+        android:name="com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.home.CoinDetailFragment"
+        android:label="fragment_coin_detail"
+        tools:layout="@layout/fragment_coin_detail" />
 </navigation>

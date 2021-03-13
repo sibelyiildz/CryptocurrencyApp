@@ -14,15 +14,16 @@ import com.sibelyildiz.cryptocurrencyapp.databinding.FragmentSplashBinding
 
 class SplashFragment : Fragment() {
 
-    private lateinit var binding: FragmentSplashBinding
+    private var _binding: FragmentSplashBinding? = null
+    private val binding get() = _binding!!
     private lateinit var countDownTimer: CountDownTimer
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSplashBinding.inflate(inflater, container, false)
+        _binding = FragmentSplashBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -45,6 +46,11 @@ class SplashFragment : Fragment() {
 
             override fun onTick(millisUntilFinished: Long) {}
         }.start()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onDestroy() {
