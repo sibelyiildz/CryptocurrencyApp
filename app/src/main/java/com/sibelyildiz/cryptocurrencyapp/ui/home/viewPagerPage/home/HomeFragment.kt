@@ -1,6 +1,8 @@
 package com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.home
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +16,7 @@ import com.sibelyildiz.cryptocurrencyapp.databinding.FragmentHomeBinding
 import com.sibelyildiz.cryptocurrencyapp.util.Resource
 import com.sibelyildiz.cryptocurrencyapp.util.Status
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class HomeFragment : Fragment() {
 
@@ -38,11 +41,16 @@ class HomeFragment : Fragment() {
 
     private fun initialize() {
         setObservers()
+        setClickListener()
         loadRecycler()
     }
 
     private fun setObservers() {
         viewModel.getCoinList().observe(viewLifecycleOwner, getCoinListObserver)
+    }
+
+    private fun setClickListener() {
+        binding.edtSarch.addTextChangedListener(searchChangedListener)
     }
 
     private fun loadRecycler() {
@@ -69,6 +77,20 @@ class HomeFragment : Fragment() {
                 Log.e("TEST", "ERROR ${state.message}")
             }
         }
+    }
+
+    private val searchChangedListener = object : TextWatcher {
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+        }
+
+        override fun afterTextChanged(s: Editable?) {
+            adapter.filter.filter(s.toString())
+            adapter.notifyDataSetChanged()
+        }
+
     }
 
     override fun onDestroyView() {

@@ -27,7 +27,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="@dimen/margin16"
-                android:src="@drawable/icn_app"
+                tools:src="@drawable/icn_app"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -64,6 +64,7 @@
                 android:layout_marginBottom="@dimen/margin16"
                 android:background="@drawable/rounded_background_blue"
                 android:backgroundTint="@color/spring_green"
+                tvBackground="@{data.priceChange}"
                 android:gravity="center"
                 android:padding="@dimen/margin6"
                 android:text="@{data.priceChange}"

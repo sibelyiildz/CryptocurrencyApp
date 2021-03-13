@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-    </data>
+    <data></data>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +13,7 @@
         tools:context=".ui.home.viewPagerPage.home.HomeFragment">
 
         <EditText
-            android:id="@+id/edt_email"
+            android:id="@+id/edt_sarch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin20"
@@ -28,7 +27,7 @@
             android:textColorHint="@color/color_grey" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewCoins"
+            android:id="@+id/recycler_view_coins"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/margin15"
