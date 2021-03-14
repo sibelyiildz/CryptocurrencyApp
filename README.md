@@ -15,9 +15,9 @@
 <li><a href="https://kotlinlang.org/docs/coroutines-overview.html">Coroutines</a></li>
 <li> Architecture Components
 <ul>
-<li>LiveData - observable data holder.</li>
-<li>Databinding - for binding UI components in your layouts to data sources in your app.</li>
-<li>ViewModel - lifecycle aware class for storing and managing UI-related data.</li>
+<li><a href="https://developer.android.com/topic/libraries/architecture/livedata">LiveData </a> - observable data holder.</li>
+<li><a href="https://developer.android.com/topic/libraries/data-binding">Databinding </a> - for binding UI components in your layouts to data sources in your app.</li>
+<li><a href="https://developer.android.com/topic/libraries/architecture/viewmodel">ViewModel </a> - lifecycle aware class for storing and managing UI-related data.</li>
 </ul>
 </li>
 <li>Architecture
