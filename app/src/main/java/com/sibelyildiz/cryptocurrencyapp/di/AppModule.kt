@@ -2,6 +2,7 @@ package com.sibelyildiz.cryptocurrencyapp.di
 
 import com.sibelyildiz.cryptocurrencyapp.data.repository.Repository
 import com.sibelyildiz.cryptocurrencyapp.ui.home.MainViewModel
+import com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.favorite.FavoriteViewModel
 import com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.home.HomeViewModel
 import com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.home.coinDetail.CoinDetailViewModel
 import com.sibelyildiz.cryptocurrencyapp.ui.loginRegister.login.LoginViewModel
@@ -15,6 +16,7 @@ val appModule = module {
     viewModel { CoinDetailViewModel(get()) }
     viewModel { LoginViewModel(get()) }
     viewModel { RegisterViewModel(get()) }
+    viewModel { FavoriteViewModel(get()) }
 
     single { Repository(get()) }
 }

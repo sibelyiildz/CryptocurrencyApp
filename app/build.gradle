@@ -74,6 +74,7 @@ dependencies {
 
     //Firebase
     implementation 'com.google.firebase:firebase-auth-ktx:19.3.2'
+    implementation 'com.google.firebase:firebase-firestore:22.1.1'
 
     //Koin
     implementation 'org.koin:koin-androidx-viewmodel:2.1.6'

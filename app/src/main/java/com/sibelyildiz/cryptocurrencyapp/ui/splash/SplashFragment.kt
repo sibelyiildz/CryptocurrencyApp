@@ -37,6 +37,7 @@ class SplashFragment : Fragment() {
         countDownTimer = object : CountDownTimer(3000, 1000) {
             override fun onFinish() {
                 findNavController().popBackStack()
+                //kullanıcının oturumu açıksa maine git değilse loginRegister
                 if (auth.currentUser != null) {
                     findNavController().navigate(R.id.mainFragment)
                 } else {

@@ -69,6 +69,8 @@
                 android:padding="@dimen/margin6"
                 android:text="@{data.priceChange}"
                 android:textColor="@color/black"
+                android:ellipsize="end"
+                android:maxLines="1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="+0.31%" />

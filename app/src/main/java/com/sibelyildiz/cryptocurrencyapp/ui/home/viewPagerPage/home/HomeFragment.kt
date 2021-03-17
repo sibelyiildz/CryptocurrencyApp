@@ -3,7 +3,6 @@ package com.sibelyildiz.cryptocurrencyapp.ui.home.viewPagerPage.home
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -77,12 +76,10 @@ class HomeFragment : Fragment() {
         when (state.status) {
             Status.LOADING -> {
                 binding.homeProgress.visibility = View.VISIBLE
-                Log.e("TEST", "LOADING ${state.data}")
             }
             Status.SUCCESS -> {
                 binding.homeProgress.visibility = View.GONE
                 state.data?.let {
-                    Log.e("TEST", "SUCCESS ${state.data}")
                     adapter.coins.clear()
                     adapter.coins.addAll(it)
                     adapter.notifyDataSetChanged()
@@ -90,7 +87,6 @@ class HomeFragment : Fragment() {
             }
             Status.ERROR -> {
                 binding.homeProgress.visibility = View.GONE
-                Log.e("TEST", "ERROR ${state.message}")
             }
         }
     }
@@ -102,6 +98,7 @@ class HomeFragment : Fragment() {
         }
 
         override fun afterTextChanged(s: Editable?) {
+            //seacrh işlemi
             adapter.filter.filter(s.toString())
             adapter.notifyDataSetChanged()
         }
